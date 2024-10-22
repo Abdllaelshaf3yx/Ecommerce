@@ -1,0 +1,106 @@
+<app-header></app-header>
+<div class="container mt-5">
+  <h2 class="text-center mb-4">Sign Up</h2>
+  <!-- Pass the form as an argument to onSubmit -->
+  <form #signupForm="ngForm" (ngSubmit)="onSubmit(signupForm)" novalidate>
+    <!-- Username Input -->
+    <div class="mb-3">
+      <label for="username" class="form-label">Username</label>
+      <input
+        type="text"
+        class="form-control"
+        id="username"
+        [(ngModel)]="username"
+        name="username"
+        required
+        minlength="3"
+        #usernameCtrl="ngModel"
+        [ngClass]="{
+          'is-invalid': usernameCtrl.invalid && usernameCtrl.touched,
+          'is-valid': usernameCtrl.valid && usernameCtrl.touched
+        }"
+      />
+      <!-- Username Validation Errors -->
+      <div
+        *ngIf="usernameCtrl.invalid && usernameCtrl.touched"
+        class="invalid-feedback"
+      >
+        <small *ngIf="usernameCtrl.errors?.['required']"
+          >Username is required.</small
+        >
+        <small *ngIf="usernameCtrl.errors?.['minlength']"
+          >Username must be at least 3 characters long.</small
+        >
+      </div>
+    </div>
+
+    <!-- Email Input -->
+    <div class="mb-3">
+      <label for="email" class="form-label">Email</label>
+      <input
+        type="email"
+        class="form-control"
+        id="email"
+        [(ngModel)]="email"
+        name="email"
+        required
+        email
+        #emailCtrl="ngModel"
+        [ngClass]="{
+          'is-invalid': emailCtrl.invalid && emailCtrl.touched,
+          'is-valid': emailCtrl.valid && emailCtrl.touched
+        }"
+      />
+      <!-- Email Validation Errors -->
+      <div
+        *ngIf="emailCtrl.invalid && emailCtrl.touched"
+        class="invalid-feedback"
+      >
+        <small *ngIf="emailCtrl.errors?.['required']">Email is required.</small>
+        <small *ngIf="emailCtrl.errors?.['email']"
+          >Please enter a valid email address.</small
+        >
+      </div>
+    </div>
+
+    <!-- Password Input -->
+    <div class="mb-3">
+      <label for="password" class="form-label">Password</label>
+      <input
+        type="password"
+        class="form-control"
+        id="password"
+        [(ngModel)]="password"
+        name="password"
+        required
+        minlength="6"
+        #passwordCtrl="ngModel"
+        [ngClass]="{
+          'is-invalid': passwordCtrl.invalid && passwordCtrl.touched,
+          'is-valid': passwordCtrl.valid && passwordCtrl.touched
+        }"
+      />
+      <div
+        *ngIf="passwordCtrl.invalid && passwordCtrl.touched"
+        class="invalid-feedback"
+      >
+        <small *ngIf="passwordCtrl.errors?.['required']"
+          >Password is required.</small
+        >
+        <small *ngIf="passwordCtrl.errors?.['minlength']"
+          >Password must be at least 6 characters long.</small
+        >
+      </div>
+    </div>
+
+    <!-- Submit Button -->
+    <button
+      type="submit"
+      class="btn btn-primary"
+      [disabled]="signupForm.invalid"
+    >
+      Sign Up
+    </button>
+  </form>
+</div>
+<app-footer></app-footer>

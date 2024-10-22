@@ -1,0 +1,57 @@
+<app-header></app-header>
+
+<div class="container mt-5">
+  <h2 class="text-center mb-4">Your Shopping Cart</h2>
+
+  @if (cartItems.length === 0) {
+  <div class="text-center">
+    <p>Your cart is empty.</p>
+    <a routerLink="/products" class="btn btn-primary">Go to Products</a>
+  </div>
+  } @if (cartItems.length > 0) {
+
+  <table class="table table-striped table-hover">
+    <thead class="table-dark">
+      <tr>
+        <th>Product</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Total</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      @for ( item of cartItems;track item.id) {
+      <tr>
+        <td>{{ item.name }}</td>
+        <td>{{ item.price | currency }}</td>
+        <td>
+          <div class="input-group">
+            <input
+              type="number"
+              class="form-control"
+              [(ngModel)]="item.quantity"
+              value="1"
+              (change)="updateQuantity(item)"
+            />
+          </div>
+        </td>
+        <td>${{ item.price * item.quantity || 1 }}</td>
+        <td>
+          <button class="btn btn-danger btn-sm" (click)="removeItem(item)">
+            Remove
+          </button>
+        </td>
+      </tr>
+      }
+    </tbody>
+  </table>
+
+  <div class="d-flex justify-content-between mt-4">
+    <h4>Total: {{ getTotalPrice() | currency }}</h4>
+    <button class="btn btn-success" (click)="checkout()">
+      Proceed to Checkout
+    </button>
+  </div>
+  }
+</div>

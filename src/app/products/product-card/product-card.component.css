@@ -1,0 +1,20 @@
+.card {
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  height: 100%; /* Ensures card takes full height */
+}
+
+.product-image {
+  width: 100%; /* Set image to fill card width */
+  height: 200px; /* Set a fixed height for all images */
+  object-fit: cover; /* Maintain aspect ratio while filling the box */
+  border-top-left-radius: 0.375rem; /* Match Bootstrap card border radius */
+  border-top-right-radius: 0.375rem; /* Match Bootstrap card border radius */
+}
+
+.card-body {
+  flex-grow: 1; /* Allow the body to take remaining height */
+  display: flex;
+  flex-direction: column; /* Stack elements */
+  justify-content: space-between; /* Space out the elements */
+}

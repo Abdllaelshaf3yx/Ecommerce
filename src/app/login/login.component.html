@@ -1,0 +1,74 @@
+<app-header></app-header>
+<div class="container mt-5">
+  <h2 class="text-center mb-4">Login</h2>
+  <form #loginForm="ngForm" (ngSubmit)="login()" novalidate>
+    <div class="mb-3">
+      <label for="username" class="form-label">Username</label>
+      <input
+        type="text"
+        class="form-control"
+        id="username"
+        [(ngModel)]="username"
+        name="username"
+        required
+        minlength="3"
+        #usernameCtrl="ngModel"
+        [ngClass]="{
+          'is-invalid': usernameCtrl.invalid && usernameCtrl.touched,
+          'is-valid': usernameCtrl.valid && usernameCtrl.touched
+        }"
+      />
+
+      <div
+        *ngIf="usernameCtrl.invalid && usernameCtrl.touched"
+        class="invalid-feedback"
+      >
+        <small *ngIf="usernameCtrl.errors?.['required']"
+          >Username is required.</small
+        >
+        <small *ngIf="usernameCtrl.errors?.['minlength']">
+          Username must be at least 3 characters long.
+        </small>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="password" class="form-label">Password</label>
+      <input
+        type="password"
+        class="form-control"
+        id="password"
+        [(ngModel)]="password"
+        name="password"
+        required
+        minlength="6"
+        #passwordCtrl="ngModel"
+        [ngClass]="{
+          'is-invalid': passwordCtrl.invalid && passwordCtrl.touched,
+          'is-valid': passwordCtrl.valid && passwordCtrl.touched
+        }"
+      />
+
+      <div
+        *ngIf="passwordCtrl.invalid && passwordCtrl.touched"
+        class="invalid-feedback"
+      >
+        <small *ngIf="passwordCtrl.errors?.['required']"
+          >Password is required.</small
+        >
+        <small *ngIf="passwordCtrl.errors?.['minlength']">
+          Password must be at least 6 characters long.
+        </small>
+      </div>
+    </div>
+
+    <button
+      type="submit"
+      class="btn btn-primary"
+      [disabled]="loginForm.invalid"
+    >
+      Login
+    </button>
+  </form>
+</div>
+<app-footer></app-footer>

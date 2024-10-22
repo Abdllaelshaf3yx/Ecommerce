@@ -1,0 +1,19 @@
+h2 {
+  color: #003366;
+}
+
+h3 {
+  margin-top: 20px;
+  color: #003366;
+}
+
+p {
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+.container {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 5px;
+}

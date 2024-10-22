@@ -1,0 +1,19 @@
+<app-header></app-header>
+
+<main class="container mt-5">
+  <h2 class="text-center mb-4">Our Products</h2>
+  <div class="row d-flex">
+    <!-- Flex container -->
+    <!-- Loop through products using Angular 18's @for directive -->
+    @for (product of products(); track product.id) {
+    <div class="col-md-4 d-flex mb-4">
+      <!-- Flex column -->
+      <app-product-card
+        [product]="product"
+        (addToCart)="addToCart($event)"
+        class="w-100"
+      ></app-product-card>
+    </div>
+    }
+  </div>
+</main>
