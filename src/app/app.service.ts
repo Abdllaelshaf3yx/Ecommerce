@@ -21,16 +21,10 @@ export class AppService {
     this.currentUser.set(username);
   }
 
-  // Method to logout
   logout() {
     this.isLoggedIn.set(false);
     this.currentUser.set(null);
     this.cart.set([]);
-  }
-
-  // Method to signup
-  signup(username: string, password: string, email: string) {
-    console.log('User signed up:', { username, password, email });
   }
 
   getCartItems() {
@@ -51,11 +45,6 @@ export class AppService {
   }
 
   updateItemQuantity(item: CartItem) {
-    if (!this.isLoggedIn()) {
-      alert('Please log in to update items in the cart.');
-      return;
-    }
-
     this.cart.update((cart) =>
       cart.map((cartItem) =>
         cartItem.id === item.id
@@ -66,11 +55,6 @@ export class AppService {
   }
 
   removeItemFromCart(item: CartItem) {
-    if (!this.isLoggedIn()) {
-      alert('Please log in to remove items from the cart.');
-      return;
-    }
-
     this.cart.update((cart) =>
       cart.filter((cartItem) => cartItem.id !== item.id)
     );
