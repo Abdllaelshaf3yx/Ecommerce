@@ -1,0 +1,102 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Classic Leather Bracelet",
+      "description": "Timeless elegance in a hand-stitched leather bracelet.",
+      "price": 29.99,
+      "image": "p1.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Bohemian Beaded Necklace",
+      "description": "Vibrant colors and intricate patterns adorn this beaded necklace.",
+      "price": 34.99,
+      "image": "p2.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Silver Hoop Earrings",
+      "description": "Sleek and modern sterling silver hoop earrings.",
+      "price": 19.99,
+      "image": "p3.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Turquoise Pendant Necklace",
+      "description": "A beautiful turquoise pendant on a delicate silver chain.",
+      "price": 49.99,
+      "image": "p4.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Minimalist Gold Ring",
+      "description": "A simple yet elegant gold ring for everyday wear.",
+      "price": 79.99,
+      "image": "p5.webp"
+    },
+    {
+      "id": 6,
+      "name": "Pearl Drop Earrings",
+      "description": "Classic pearl earrings with a modern twist.",
+      "price": 39.99,
+      "image": "p6.webp"
+    },
+    {
+      "id": 7,
+      "name": "Leather Wrap Watch",
+      "description": "A stylish leather-wrapped watch with a minimalist dial.",
+      "price": 59.99,
+      "image": "p7.jpg"
+    },
+    {
+      "id": 8,
+      "name": "Stackable Silver Bangles",
+      "description": "A set of three stackable silver bangles for a trendy look.",
+      "price": 24.99,
+      "image": "p8.avif"
+    },
+    {
+      "id": 9,
+      "name": "Crystal Stud Earrings",
+      "description": "Sparkling crystal earrings for a touch of glamour.",
+      "price": 17.99,
+      "image": "p9.jpg"
+    },
+    {
+      "id": 10,
+      "name": "Beaded Anklet",
+      "description": "A playful beaded anklet for summer vibes.",
+      "price": 12.99,
+      "image": "p10.webp"
+    },
+    {
+      "id": 11,
+      "name": "Gold Chain Necklace",
+      "description": "A classic gold chain necklace for a sophisticated look.",
+      "price": 99.99,
+      "image": "p11.webp"
+    },
+    {
+      "id": 12,
+      "name": "Leather Cord Bracelet",
+      "description": "A simple leather cord bracelet with a silver clasp.",
+      "price": 14.99,
+      "image": "p12.webp"
+    },
+    {
+      "id": 13,
+      "name": "Silver Cuff Bracelet",
+      "description": "A bold silver cuff bracelet for a statement look.",
+      "price": 44.99,
+      "image": "p13.avif"
+    },
+    {
+      "id": 14,
+      "name": "Geometric Earrings",
+      "description": "Modern geometric earrings for a unique style.",
+      "price": 22.99,
+      "image": "p14.webp"
+    }
+  ]
+}
