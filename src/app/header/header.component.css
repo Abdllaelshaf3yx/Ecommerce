@@ -64,3 +64,21 @@
     margin-top: 20px;
   }
 }
+
+.navbar-toggler-icon {
+  background-image: none;
+  color: white;
+  border: 1px solid white;
+}
+
+.navbar-toggler {
+  color: white;
+}
+
+.navbar-toggler span {
+  background-color: white;
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 4px auto;
+}
