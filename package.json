@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "start:json": "json-server --watch db.json"
+    "start:json": "json-server --watch products.json"
   },
   "private": true,
   "dependencies": {
