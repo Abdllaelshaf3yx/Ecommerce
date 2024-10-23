@@ -1,9 +1,8 @@
 <app-header></app-header>
 <div class="container mt-5">
   <h2 class="text-center mb-4">Sign Up</h2>
-  <!-- Pass the form as an argument to onSubmit -->
+
   <form #signupForm="ngForm" (ngSubmit)="onSubmit(signupForm)" novalidate>
-    <!-- Username Input -->
     <div class="mb-3">
       <label for="username" class="form-label">Username</label>
       <input
@@ -20,7 +19,6 @@
           'is-valid': usernameCtrl.valid && usernameCtrl.touched
         }"
       />
-      <!-- Username Validation Errors -->
       <div
         *ngIf="usernameCtrl.invalid && usernameCtrl.touched"
         class="invalid-feedback"
@@ -34,7 +32,6 @@
       </div>
     </div>
 
-    <!-- Email Input -->
     <div class="mb-3">
       <label for="email" class="form-label">Email</label>
       <input
@@ -51,7 +48,6 @@
           'is-valid': emailCtrl.valid && emailCtrl.touched
         }"
       />
-      <!-- Email Validation Errors -->
       <div
         *ngIf="emailCtrl.invalid && emailCtrl.touched"
         class="invalid-feedback"
@@ -63,7 +59,6 @@
       </div>
     </div>
 
-    <!-- Password Input -->
     <div class="mb-3">
       <label for="password" class="form-label">Password</label>
       <input
@@ -93,7 +88,6 @@
       </div>
     </div>
 
-    <!-- Submit Button -->
     <button
       type="submit"
       class="btn btn-primary"

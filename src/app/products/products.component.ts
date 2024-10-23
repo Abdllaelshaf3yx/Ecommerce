@@ -13,16 +13,15 @@ import { ProductCardComponent } from './product-card/product-card.component';
   styleUrls: ['./products.component.css'],
 })
 export class ProductsComponent implements OnInit {
-  products = signal<CartItem[]>([]); // Signal to hold products array
+  products = signal<CartItem[]>([]);
 
   // Inject the AppService
   private productsService = inject(AppService);
 
   ngOnInit(): void {
-    // Load the products from the service
     this.productsService.loadProducts().subscribe({
       next: (products) => {
-        this.products.set(products as CartItem[]); // Ensure the products are of type CartItem
+        this.products.set(products as CartItem[]);
       },
       error: (err) => {
         console.error('Failed to load products', err);
@@ -30,11 +29,10 @@ export class ProductsComponent implements OnInit {
     });
   }
 
-  // Add a product to the cart
   addToCart(product: CartItem) {
     if (this.productsService.isLoggedIn()) {
-      this.productsService.addItemToCart(product); // Add the product to the cart via the service
-      console.log(this.productsService.getCartItems()); // Log the updated cart
+      this.productsService.addItemToCart(product);
+      console.log(this.productsService.getCartItems());
     } else {
       alert('Please log in to add items to the cart.');
     }

@@ -11,6 +11,6 @@ import { CurrencyPipe } from '@angular/common';
   imports: [CurrencyPipe],
 })
 export class ProductCardComponent {
-  @Input() product!: CartItem; // Ensure the product input is defined
+  @Input() product!: CartItem;
   @Output() addToCart = new EventEmitter<CartItem>();
 }

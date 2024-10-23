@@ -1,7 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
-import { AppService } from '../app.service';
-import { FormsModule, NgForm } from '@angular/forms'; // NgForm added for form validation
+import { FormsModule, NgForm } from '@angular/forms';
 import { FooterComponent } from '../footer/footer.component';
 import { HeaderComponent } from '../header/header.component';
 import { CommonModule } from '@angular/common';
@@ -9,7 +8,7 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-signup',
   standalone: true,
-  imports: [FormsModule, FooterComponent, HeaderComponent, CommonModule], // Import FormsModule for ngModel
+  imports: [FormsModule, FooterComponent, HeaderComponent, CommonModule],
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.css'],
 })
