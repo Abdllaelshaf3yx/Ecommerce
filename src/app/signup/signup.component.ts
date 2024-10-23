@@ -18,21 +18,13 @@ export class SignupComponent {
   password: string = '';
   email: string = '';
 
-  private appService = inject(AppService);
   private router = inject(Router);
 
-  // Method to handle signup form submission
   onSubmit(signupForm: NgForm) {
-    // Check if the form is valid
     if (signupForm.valid) {
-      // Call the service to handle signup
-      this.appService.signup(this.username, this.password, this.email);
-
-      // Inform the user and navigate to the login page
       alert('Signup successful! You can now log in.');
-      this.router.navigate(['/login']); // Redirect to login page after successful signup
+      this.router.navigate(['/login']);
     } else {
-      // Form is invalid, show error alert
       alert('Please fill in all fields correctly.');
     }
   }
